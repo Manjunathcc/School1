@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SchoolManagament.API</name>
+    </assembly>
+    <members>
+        <member name="M:SchoolManagament.API.Controllers.AuthenticationController.Login(SchoolManagement.Domain.Models.LoginModel)">
+            <summary>
+            Logs in a user using the provided credentials.
+            </summary>
+            <param name="model">The login credentials.</param>
+            <returns>
+              <list type="bullet">
+                <item><description>200 OK: If login is successful, returns a success message.</description></item>
+                <item><description>400 Bad Request: If the payload is invalid or login fails, returns an error message.</description></item>
+                <item><description>500 Internal Server Error: If an unexpected error occurs during login, returns an error message.</description></item>
+              </list>
+            </returns>
+        </member>
+        <member name="M:SchoolManagament.API.Controllers.AuthenticationController.Register(SchoolManagement.Domain.Models.RegistrationModel)">
+            <summary>
+            Registers a new user with the provided information.
+            </summary>
+            <param name="model">The registration details.</param>
+            <returns>
+              <list type="bullet">
+                <item><description>201 Created: If registration is successful, returns the newly created user details.</description></item>
+                <item><description>400 Bad Request: If the payload is invalid or registration fails, returns an error message.</description></item>
+                <item><description>500 Internal Server Error: If an unexpected error occurs during registration, returns an error message.</description></item>
+              </list>
+            </returns>
+        </member>
+        <member name="M:SchoolManagament.API.Controllers.StudentController.GetStudents">
+            <summary>
+            Gets the list of All Students
+            </summary>
+            <returns>The list of Students</returns>
+        </member>
+        <member name="M:SchoolManagament.API.Controllers.StudentController.GetStudentById(System.Int32)">
+            <summary>
+            Retrieves a specific student by its ID.
+            </summary>
+            <param name="id">The ID of the item to retrieve.</param>
+            <returns>The student associated to specified ID.</returns>
+        </member>
+        <member name="M:SchoolManagament.API.Controllers.StudentController.AddStudent(SchoolManagement.Domain.Models.Student)">
+            <summary>
+            Creates an Student
+            </summary>
+            <remarks>
+            Sample request:
+            
+               POST api/Student
+               {
+                  "studentName":"Manju"
+                  "age":22,
+                  "grade":"A"
+               }
+            </remarks>
+            <param name="student">The item to create</param>
+            <response code = "201">Returns No Conteent</response>
+            <response code = "400">If the item is null</response>
+        </member>
+        <member name="M:SchoolManagament.API.Controllers.StudentController.UpdateStudent(System.Int32,SchoolManagement.Domain.Models.Student)">
+            <summary>
+            Updates an Student
+            </summary>
+            <remarks>
+            Sample request:
+            
+               PUT api/Student
+               {
+                  "id": 1
+                  "studentName":"Manju"
+                  "age":22,
+                  "grade":"A"
+               }
+            </remarks>
+            <param name="Id">The ID of student to update</param>
+            <param name="student">The updated student data</param>
+            <response code = "200">Returns 200 status code for successful Updation</response>
+            <response code = "400">If the item is null</response>
+        </member>
+        <member name="M:SchoolManagament.API.Controllers.StudentController.DeleteStudent(System.Int32)">
+            <summary>
+            Deletes an student by its ID.
+            </summary>
+            <param name="id">The ID of the student to delete.</param>
+            <returns>No content.</returns>
+        </member>
+    </members>
+</doc>
